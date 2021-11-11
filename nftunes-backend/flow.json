@@ -1,0 +1,41 @@
+{
+	"emulators": {
+		"default": {
+			"port": 3569,
+			"serviceAccount": "testnet-account"
+		}
+	},
+	"contracts": {
+		"NFTunes": "./cadence/contracts/NFTunes.cdc",
+		"Note": "./cadence/contracts/Note.cdc",
+		"Market": "./cadence/contracts/Market.cdc"
+   },
+	"networks": {
+		"emulator": {
+			"host": "127.0.0.1:3569",
+			"chain": "flow-emulator"
+		},
+		"mainnet": {
+			"host": "access.mainnet.nodes.onflow.org:9000",
+			"chain": "flow-mainnet"
+		},
+		"testnet": {
+			"host": "access.devnet.nodes.onflow.org:9000",
+			"chain": "flow-testnet"
+		}
+	},
+	"accounts": {
+		"testnet-account": {
+			"address": "0x36dec30520f41e9d",
+			"keys": "d9293e08c21c2642c1b604bfbf8f159044b96d9b7fbdfd3025769823b978ffd3",
+			"chain": "flow-testnet",
+			"sigAlgorithm": "ECDSA_P256",
+     		"hashAlgorithm": "SHA3_256"
+		}
+	},
+	"deployments": {
+		"testnet": {
+			 "testnet-account": ["NFTunes", "Note", "Market"]
+		}
+   }
+}
